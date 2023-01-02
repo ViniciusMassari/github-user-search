@@ -6,6 +6,7 @@ const errorMessage = document.querySelector(".error-message");
 const events = ["click", "touchstart"];
 
 function showUserInformation(user) {
+  input.value = "";
   errorMessage.classList.remove("active");
   const userCreated = user.created_at.replace(
     /(\d{4})-(\d{2})-(\d{2})(?:T\d{2}\:\d{2}\:\d{1,}\w)/g,
@@ -49,13 +50,17 @@ function showUserInformation(user) {
 
 async function searchForUser(event) {
   event.preventDefault();
+  userInfo.innerHTML = "";
   try {
     const userInformation = await fetch(
       `https://api.github.com/users/${input.value}`
     );
-    const userJson = await userInformation.json();
-    showUserInformation(userJson);
-    input.value = " ";
+    if (userInformation.status < 400) {
+      const userJson = await userInformation.json();
+      showUserInformation(userJson);
+    } else {
+      errorMessage.classList.add("active");
+    }
   } catch (error) {
     userInfo.innerHTML = "";
     errorMessage.classList.add("active");

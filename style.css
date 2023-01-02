@@ -112,6 +112,7 @@ a:visited {
 .error-message {
   display: none;
   color: var(--error-message);
+  text-align: center;
 }
 
 .error-message.active {

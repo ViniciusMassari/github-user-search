@@ -1,0 +1,148 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+:root {
+  --primary-background: #121212;
+  --secondary-background: #161b22;
+  --secondary-font-color: #293340;
+  --hover-background: #3c4a5d;
+  --primary-font-color: rgba(255, 255, 255, 0.6);
+}
+
+body {
+  background-color: var(--primary-background);
+  display: grid;
+  grid-template-areas:
+    "header header header"
+    "content content content";
+  font-family: "Roboto Mono", monospace;
+}
+input {
+  background-color: var(--secondary-background);
+  color: var(--primary-font-color);
+}
+
+.search-button {
+  background-color: var(--secondary-font-color);
+  padding: 8px;
+  border-radius: 50px;
+  cursor: pointer;
+}
+
+.search-button:hover {
+  background-color: var(--hover-background);
+}
+
+header {
+  grid-area: header;
+  display: flex;
+  justify-content: space-evenly;
+  margin-bottom: 1rem;
+}
+
+.user-info {
+  grid-area: content;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  color: var(--primary-font-color);
+}
+
+.user-image {
+  grid-column: 1 / -1;
+  align-self: center;
+  justify-self: center;
+  width: 15rem;
+  border-radius: 50%;
+  overflow: hidden;
+  border: solid 1px var(--hover-background);
+}
+
+.user-image img {
+  max-width: 100%;
+}
+
+.name,
+.login,
+.bio,
+.public-repos,
+.visit-profile {
+  grid-column: 3 / 4;
+  align-self: center;
+  justify-self: center;
+  margin-bottom: 0.875rem;
+}
+
+.bio {
+  font-style: italic;
+  text-align: center;
+}
+
+.follow {
+  text-align: center;
+  grid-area: 4 / 2;
+  margin: 1rem;
+}
+
+.following {
+  margin-bottom: 0.875rem;
+}
+
+.profile-information {
+  grid-area: 4 / 4;
+  margin: 1rem;
+  text-align: center;
+}
+
+.profile-creation {
+  margin-bottom: 0.575rem;
+}
+
+a:visited {
+  color: var(--primary-font-color);
+}
+
+@media (max-width: 61.25rem) {
+  body {
+    grid-template-columns: 1fr;
+  }
+
+  .user-info {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .name,
+  .login,
+  .bio,
+  .public-repos,
+  .visit-profile {
+    grid-column: 2;
+    text-align: center;
+  }
+
+  .name,
+  .login,
+  .bio,
+  .public-repos {
+    border-bottom: 1px solid #fff;
+  }
+
+  .follow {
+    grid-area: 5 /2;
+  }
+
+  .follow p {
+    border-bottom: #fff 1px solid;
+  }
+
+  .profile-information {
+    grid-area: 6 / 2;
+  }
+
+  .profile-information p {
+    border-bottom: #fff solid 1px;
+  }
+}

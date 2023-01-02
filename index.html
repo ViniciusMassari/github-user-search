@@ -4,12 +4,15 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
     <title>Document</title>
   </head>
   <body>
     <header>
-      <input type="text" id="search-user-input" />
-      <button class="search">Search</button>
+      <div class="search">
+        <input type="text" id="search-user-input" />
+        <button class="search-button">Search</button>
+      </div>
     </header>
     <main class="user-info">
       <div class="user-image">
@@ -18,22 +21,27 @@
           alt="ViniciusMassari profile photo"
         />
       </div>
-      <div class="user-information">
-        <p class="name">Vinícius Massari</p>
-        <p class="login">ViniciusMassari</p>
-        <p class="follow">Following: 5</p>
-        <p class="follow">Followers: 3</p>
-        <p class="bio">Beginner front-end developer</p>
-        <p class="public-repos">public repositories: 23</p>
-        <p class="profile-creation">Profile created at: 2022-07-04T11:47:24Z</p>
-        <p class="profile-update">Last update at: 2023-01-02T18:27:36Z</p>
-        <a
-          class="visit-profile"
-          target="_blank"
-          href="https://github.com/ViniciusMassari"
-          >Visit complete profile</a
-        >
+
+      <p class="name">Vinícius Massari</p>
+      <p class="login">ViniciusMassari</p>
+      <div class="follow">
+        <p class="following">Following: 5</p>
+        <p class="followers">Followers: 3</p>
       </div>
+
+      <p class="bio">Beginner front-end developer</p>
+      <p class="public-repos">public repositories: 23</p>
+      <div class="profile-information">
+        <p class="profile-creation">Profile created at: 2022-07-04</p>
+        <p class="profile-update">Last update at: 2023-01-02</p>
+      </div>
+
+      <a
+        class="visit-profile"
+        target="_blank"
+        href="https://github.com/ViniciusMassari"
+        >Visit complete profile</a
+      >
     </main>
   </body>
 </html>

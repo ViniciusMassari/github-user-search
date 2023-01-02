@@ -11,6 +11,7 @@
   --secondary-font-color: #293340;
   --hover-background: #3c4a5d;
   --primary-font-color: rgba(255, 255, 255, 0.6);
+  --error-message: #ff0000;
 }
 
 body {
@@ -101,8 +102,20 @@ header {
   margin-bottom: 0.575rem;
 }
 
+a {
+  color: var(--hover-background);
+}
 a:visited {
   color: var(--primary-font-color);
+}
+
+.error-message {
+  display: none;
+  color: var(--error-message);
+}
+
+.error-message.active {
+  display: block;
 }
 
 @media (max-width: 61.25rem) {
